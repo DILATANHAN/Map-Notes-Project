@@ -131,6 +131,6 @@ function handleClick(e) {
     if(e.target.id === "fly") {
       const note =  notes.find((note) => note.id == id); // Tikladigimiz elemanin id si ile dizi icerinde ki elemanlardan herhangi birinin id si eslesirse bul.
         console.log(note);
-        map.flyto(note.coords); //* Haritayi buldugumuz elemana yonlendirmesi icin flyTo methodunu kullandik.
+        map.flyTo(note.coords); //* Haritayi buldugumuz elemana yonlendirmesi icin flyTo methodunu kullandik.
     }
 }
