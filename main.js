@@ -99,8 +99,9 @@ function handleSubmit(e){
         layerGroup.clearLayers();
         //* Herbir not icin fonksiyon bir li etiketi olusturur ve icerisini gunceller.
         item.forEach((item) => {
-        const listElement = document.createElement("li"); //* Bir li etiketi olusturur.
-        list.dataset.id = item.id; //* Li etiketine data-id ozelligi ekleme.
+        const listElement = document.createElement("li");
+        //* Bir li etiketi olusturur.
+        listElement.dataset.id = item.id; //* Li etiketine data-id ozelligi ekleme.
         listElement.innerHTML = `
         <div>
               <p>${item.desc}</p>
@@ -120,11 +121,10 @@ function handleSubmit(e){
 function handleClick(e) {
     //* Guncellenecek elemanin id'sini ogrenmek iocin parentelement yontemini kullandik.
     const id = e.target.parentElement.dataset.id;
-    console.log(id);
+    console.log("idd" ,id);
     if(e.target.id === "delete"){
         //* idsini bildigimiz  elemani diziden filter yontemi kullanarak kaldirdik.
-     notes.filter((note) => note.id != id );
-     console.log(notes);
+     notes= notes.filter((note) => note.id != id );
      setStorage(notes); //* localstorage guncelle
      renderNoteList(notes); //*ekrani guncelle
     } 
